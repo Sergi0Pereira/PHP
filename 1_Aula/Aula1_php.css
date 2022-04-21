@@ -1,0 +1,28 @@
+body{
+margin:0px;
+}
+
+h1{
+      position: relative;
+      margin-top: 10%;
+      width: 100%;
+      height: 40px;
+      color: #BB8A89;
+      text-align: center;
+      background-color: #0d160b;
+}
+
+
+.title {
+      box-sizing: border-box;
+      position: absolute;
+      background-color: #BB8A89;
+      width: 100%;
+
+      top: 40px;
+   
+    
+
+      
+
+}
