@@ -13,8 +13,8 @@ try {
 
     //Comando SQL
 
-    $sql = 
-    "insert into convidados (nome,apelido,email) values ('Joao','Melo','Joaomelo@gmail.com');";
+    $sql = "Select * from convidados;";
+    "insert into convidados (nome,apelido,email) values ('Rui', 'Moreira','RuiMoreira@gmail.com');";
     
     
     
@@ -29,14 +29,41 @@ try {
 
     //executa o comando SQL
 
-    $conn->exec($sql);
+    $statement = $conn->query($sql);
 
-   
+    $result = $statement-> fetchAll(); // result é um arreio associativo
+
+    echo "<table>";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th>Id</th>";
+    echo "<th>Nome</th>";
+    echo  "<th>Apelido</th>";
+    echo "<th>Email</th>";
+    echo "<th>Data Registo </th>";
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
+    foreach ($result as $convidado){
+        echo "<tr>";
+        echo "<td>". $convidado["id"]."</td>";
+        echo "<td>". $convidado["nome"] ."</td>";
+        echo "<td>". $convidado["apelido"] ."</td>";
+        echo "<td>". $convidado["email"] ."</td>";
+        echo "<td>". $convidado["dataRegisto"]."</td>";
+        echo "</tr>";
+    }
+    echo "</tbody>";
+    echo "</table>";
+ 
+    }
 
 
 
-    echo "<h1>Base de Dados criada com sucesso!</h1>";
-} catch (PDOException $e) {
+
+    // echo "<h1Registo inserido com sucesso e com o id!. $conn-> lastInsertId() . </h1>";
+
+catch (PDOException $e) {
 
     echo "<h1>Nao consegui efetuar a ligacao</h1>" . $e->getMessage(); // Mnesagem de erro gerada pelo PHP.
 }
