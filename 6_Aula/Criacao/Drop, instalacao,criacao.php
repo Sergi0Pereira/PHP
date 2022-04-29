@@ -14,9 +14,9 @@
         //Comando SQL
 
 
-        $sql = "DROP DATABASE IF EXISTS coiso;
-        CREATE DATABASE IF NOT EXISTS coiso;
-        USE coiso;
+        $sql = "DROP DATABASE IF EXISTS dn_php;
+        CREATE DATABASE IF NOT EXISTS db_php;
+        USE db_php;
 
         DROP TABLE IF EXISTS Moradas, Utilizadores;
 
