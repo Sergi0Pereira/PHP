@@ -14,7 +14,7 @@
         //Comando SQL
 
 
-        $sql = "DROP DATABASE IF EXISTS dn_php;
+        $sql = "DROP DATABASE IF EXISTS db_php;
         CREATE DATABASE IF NOT EXISTS db_php;
         USE db_php;
 

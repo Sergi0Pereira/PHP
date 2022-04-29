@@ -12,8 +12,8 @@
                 define("DB_USER", "root");
                 define("DB_PASS", "");    
                 define("DB_NAME", "db_php");
-                define("DSN", "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME);
-                define("CONFIG_OP", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                define("DSN", "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME);// perguntar
+                define("CONFIG_OP", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // perguntar
     ?>
 </body>
 </html>

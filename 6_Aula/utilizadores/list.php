@@ -7,7 +7,7 @@
     <title>list</title>
 </head>
 <body>
-    <?php include"../config.php";
+    <?php include"../config/config.php";
         try{
         $conn = new PDO(DSN, DB_USER,DB_PASS, CONFIG_OP);
         $sql ="SELECT * FROM utilizadores;";
@@ -38,6 +38,7 @@
             } else{
                 echo "Não existem registos.";
             }
+         
         ?>
 
 </body>

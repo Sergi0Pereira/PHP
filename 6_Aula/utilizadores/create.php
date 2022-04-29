@@ -1,6 +1,6 @@
 <?php
-    if(isset($_POST['submit'])){
-        include "../Criacao/config.php";
+    if(isset($_POST['submit'])){ // perguntar o que acontece se nao for colocado
+        include "../config/config.php";
         try{
             $conn = new PDO(DSN, DB_USER,DB_PASS, CONFIG_OP);
             $sql = "INSERT into utilizadores (nome, apelido, email, palavra_passe) values (?, ?, ?, ?)";
