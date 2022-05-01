@@ -40,16 +40,6 @@
         );";
 
 
-
-
-        /*"create table convidados(
-	id int(6) auto_increment primary key,
-    nome varchar(30) not null,
-    apeliddo varchar(30) not null,
-    email varchar(50),
-    dataRegisto timestamp default current_timestamp on update current_timestamp
-    );";*/
-
         //executa o comando SQL
 
         $statement = $conn->query($sql);
