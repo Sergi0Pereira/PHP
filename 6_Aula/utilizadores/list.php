@@ -32,7 +32,7 @@
                 echo "<td>" . $user["nome"] . "</td>";
                 echo "<td>" . $user["apelido"] . "</td>";
                 echo "<td>" . $user["email"] . "</td>";
-                echo "<td><a href='update.php'>Editar</a><a href='delete.php?id=" . $user["id"]."'>Apagar</a></td>";
+                echo "<td><a href='details.php?id=" .$user["id"] . "'>Ver</a><a href='update.php?id=" . $user["id"] ."'>Editar</a><a href='delete.php?id=" . $user["id"]."'>Apagar</a></td>";
                 
                 echo "</tr>";
             }

@@ -7,8 +7,8 @@
             $stmt->bindParam(1, $_POST["nome"], PDO::PARAM_STR);
             $stmt->bindParam(2, $_POST["apelido"], PDO::PARAM_STR);    
             $stmt->bindParam(3, $_POST["email"], PDO::PARAM_STR);    
-            $stmt->bindParam(4, $_POST["psw"], PDO::PARAM_STR);        
-        
+            $stmt->bindParam(4, $_POST["palavra_passe"], PDO::PARAM_STR);        
+
             $stmt->execute();
             echo "Dados inseridos com sucesso.";
         }catch (PDOException $e) {
@@ -36,8 +36,8 @@
         <label for="email">E-mail: </label>
         <input type="email" name="email" id="email" placeholder="Insira o seu e-mail">
         <br><br>
-        <label for="psw">Palavra-passe: </label>
-        <input type="password" name="psw" id="psw" placeholder="Insira uma palavra-passe">
+        <label for="pass">Palavra-passe: </label>
+        <input type="password" name="palavra_passe" id="pass" placeholder="Insira uma palavra-passe">
         <br><br>
         <input type="submit" name="submit" value="Registar">
     </form>
