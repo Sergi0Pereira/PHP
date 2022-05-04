@@ -17,34 +17,35 @@ if (isset($_GET['id'])) {
     }
 }
 
+if (isset($_POST["submit"])) {
+    $nome = $_POST['nome'];
+    $apelido = $_POST['apelido'];
+    $email = $_POST['email'];
+    $palavra_passe = $_POST['palavra_passe'];
 
-if(isset($POST['submit'])){
-    $nome=$_POST['nome'];
-    $apelido=$_POST['apelido'];
-    $email=$_POST['email'];
-    $palavra_passe=$_POST['palavra_passe'];
-}
-try{
+
+
+try {
     $sql = "UPDATE UTILIZADORES SET nome=?, apelido=?, email=?, palavra_passe=? where id=" . $id;
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $nome, PDO::PARAM_STR);
     $stmt->bindParam(2, $apelido, PDO::PARAM_STR);
     $stmt->bindParam(3, $email, PDO::PARAM_STR);
-    $stmt->bindParam(4, $palavra_passe, PDO::PARAM_STR);  
+    $stmt->bindParam(4, $palavra_passe, PDO::PARAM_STR);
 
-    if($stmt->execute()){
+        echo "Dados modificados com sucesso.";
+
+        if ($stmt->execute()) {
         header("location:list.php");
-
-    }else{
+        } else {
         echo "Erro!";
+        }
+
+    } catch (PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
     }
-
-
-
 }
-catch (PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +62,7 @@ catch (PDOException $e) {
     <H1>Atualizar utilizador <?php echo $user["nome"]; ?></H1>
     <form method="post">
         <label for="nome">Nome: </label>
-        <input type="text" name="nome" id="nome" value=<?php echo $user["nome"]; ?> >
+        <input type="text" name="nome" id="nome" value=<?php echo $user["nome"]; ?>>
         <br><br>
         <label for="apelido">Apelido: </label>
         <input type="text" name="apelido" id="apelido" value=<?php echo $user["apelido"]; ?>>
@@ -72,7 +73,7 @@ catch (PDOException $e) {
         <label for="psw">Palavra-passe: </label>
         <input type="password" name="pass" id="pass" value=<?php echo $user["palavra_passe"]; ?>>
         <br><br>
-        <input type="submit" name="submit" value="Registar">
+        <input type="submit" name="submit" value="Atualizar">
     </form>
 
 
