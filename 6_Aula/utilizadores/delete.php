@@ -8,7 +8,7 @@ if (isset($_POST['id']) && $_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(1, $_POST["id"], PDO::PARAM_INT);
 
         if ($stmt->execute()) {
-            header("location: list.php");
+            header("location: list.php"); // se correu bem  reencaminho a pessoa para a página de listagem
         } else {
             echo "O statement nao executou devidamente.";
         }

@@ -1,19 +1,19 @@
 <?php
 
 include "../config/config.php";
-
+if (isset($_GET['id'])){ // acedi à página por url ou diretamente e o ID está definido
 try {
 
     $sql = "SELECT * FROM UTILIZADORES WHERE ID= ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $_GET["id"], PDO::PARAM_INT);
     $stmt->execute();
-    $user = $stmt->fetch();
+    $user = $stmt->fetch(); // buscar a linha do utilizador que pretendemos
 } catch (PDOException $e) {
 
     echo $sql . "<br>" . $e->getMessage();
 }
-
+}
 ?>
 
 <!DOCTYPE html>

@@ -1,8 +1,8 @@
-    <?php include "../config/config.php";
-    try {
-        $sql = "SELECT * FROM utilizadores;";
-        $stmt = $conn->query($sql);
-        $users = $stmt->fetchAll();
+    <?php include "../config/config.php"; // Importar as constantes e a ligaçao criada
+    try { // tentar receber dados da tabela utilizadores
+        $sql = "SELECT * FROM utilizadores;"; // query a executar
+        $stmt = $conn->query($sql); //esta variavel stmt é como carregar no raio do workbench
+        $users = $stmt->fetchAll(); // recebe todos os dados que vem do comando executado
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
     }
@@ -22,7 +22,7 @@
     <body>
         <h2>Lista de utilizadores</h2>
         <?php
-        if ($users != null) {
+        if ($users != null) { // Se a váriavel users nao estiver vazia
             echo "Lista com registos.";
             echo "<table>";
             echo "<thead><tr><th>Nome</th><th>Apelido</th><th>E-mail</th><th>Acçoes</th>";

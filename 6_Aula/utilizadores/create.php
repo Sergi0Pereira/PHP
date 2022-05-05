@@ -1,10 +1,10 @@
 <?php
-if (isset($_POST['submit'])) { // perguntar o que acontece se nao for colocado
+if (isset($_POST['submit'])) { // se eu submeti os dados pelo formulário, utilizando o metodo POST
     include "../config/config.php";
-    try {
+    try { // tenta inserir dados na tabela utilizador
         $sql = "INSERT into utilizadores (nome, apelido, email, palavra_passe) values (?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(1, $_POST["nome"], PDO::PARAM_STR);
+        $stmt = $conn->prepare($sql); // prepara a query para receber os dados tratados
+        $stmt->bindParam(1, $_POST["nome"], PDO::PARAM_STR); // verifica se o tipo de dado é o correto e associa-o à posiçao na query
         $stmt->bindParam(2, $_POST["apelido"], PDO::PARAM_STR);
         $stmt->bindParam(3, $_POST["email"], PDO::PARAM_STR);
         $stmt->bindParam(4, $_POST["palavra_passe"], PDO::PARAM_STR);
@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) { // perguntar o que acontece se nao for colocado
 
         echo "Dados inseridos com sucesso.";
 
-        if ($stmt->execute()) {
+        if ($stmt->execute()) { // executa a nossa query se correr bem e Erro se correr mal..
             header("location:list.php");
         } else {
             echo "Erro!";
