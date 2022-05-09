@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submit'])) { // se eu submeti os dados pelo formulário, utilizando o metodo POST
-    include "../config/config.php";
+    include "config.php";
     try { // tenta inserir dados na tabela utilizador
         $sql = "INSERT into utilizadores (nome, apelido, email, palavra_passe) values (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql); // prepara a query para receber os dados tratados

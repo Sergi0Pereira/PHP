@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['id']) && $_SERVER["REQUEST_METHOD"] == "POST") {
-    include "../config/config.php";
+    include "config.php";
 
     try {
         $sql = "delete  from utilizadores where id = ?";

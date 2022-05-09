@@ -1,6 +1,6 @@
 <?php
 
-include "../config/config.php";
+include "config.php";
 if (isset($_GET['id'])){ // acedi à página por url ou diretamente e o ID está definido
 try {
 

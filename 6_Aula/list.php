@@ -1,4 +1,4 @@
-    <?php include "../config/config.php"; // Importar as constantes e a ligaçao criada
+    <?php include "config.php"; // Importar as constantes e a ligaçao criada
     try { // tentar receber dados da tabela utilizadores
         $sql = "SELECT * FROM utilizadores;"; // query a executar
         $stmt = $conn->query($sql); //esta variavel stmt é como carregar no raio do workbench
