@@ -3,7 +3,7 @@ if (isset($_POST['id']) && $_SERVER["REQUEST_METHOD"] == "POST") {
     include "config.php";
 
     try {
-        $sql = "delete  from utilizadores where id = ?";
+        $sql = "delete from utilizadores where id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1, $_POST["id"], PDO::PARAM_INT);
 
