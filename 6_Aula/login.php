@@ -20,12 +20,14 @@ try {
 
             if ($count == 1) {
                 $_SESSION['email'] = $_POST['email'];
-
-                if (isset($_SESSION["email"])) {
-                    header("location:inicio.php");
+                echo "ola"; //
+                
                 } else {
                     $message = "DADOS INCORRETOS";
+                    echo $message;
                 }
+            if (isset($_SESSION["email"])) {
+                header("location:inicio.php");
             }
         }
     }
