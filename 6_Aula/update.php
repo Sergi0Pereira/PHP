@@ -1,8 +1,8 @@
 <?php
 include("../../6_Aula/config/config.php");
 
-if (isset($_GET['id'])) {
-    $id = $_GET["id"];
+if (isset($_GET['id'])) { // se a variável $_GET['id'] existir e não estiver vazia (se o utilizador clicar no botão de apagar
+    $id = $_GET["id"]; // $id = o valor da variável $_GET['id']
 
     try {
 
@@ -10,14 +10,14 @@ if (isset($_GET['id'])) {
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        $user = $stmt->fetch();
+        $user = $stmt->fetch(); // $user = o resultado da query (o utilizador) que foi executada. fetch = pega o resultado da query.
     } catch (PDOException $e) {
 
         echo $sql . "<br>" . $e->getMessage();
     }
 }
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["submit"])) { // se o botão de submit foi clicado e não estiver vazio 
     $nome = $_POST['nome'];
     $apelido = $_POST['apelido'];
     $email = $_POST['email'];
@@ -27,7 +27,7 @@ if (isset($_POST["submit"])) {
 
 try {
     $sql = "UPDATE UTILIZADORES SET nome=?, apelido=?, email=?, palavra_passe=? where id=" . $id;
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare($sql); // prepara a query. $conn = conexão com o banco de dados $sql = query a ser executada
     $stmt->bindParam(1, $nome, PDO::PARAM_STR);
     $stmt->bindParam(2, $apelido, PDO::PARAM_STR);
     $stmt->bindParam(3, $email, PDO::PARAM_STR);

@@ -18,7 +18,19 @@
     // os nomes das variáveis ​​PHP diferenciam maiúsculas de minúsculas!
     ?>
         <p>
-            <?php echo $txt . $ano; // o . faz com que as variaveis se somem
+            <form action="Intro.php" method="post"> // action = para onde vai o formulário
+                
+            <input type="password" name="password"><br> // input = campo de texto
+            <input type="submit"> // submit = botão de envio
+
+            </form>
+            
+            <br>
+
+            <?php 
+            
+            echo $_POST["password"];
+            //echo $txt . $ano; // o . faz com que as variaveis se concatenem
             ?>
         </p>
     </div>
