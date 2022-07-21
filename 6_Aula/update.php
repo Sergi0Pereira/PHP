@@ -7,9 +7,9 @@ if (isset($_GET['id'])) { // se a variável $_GET['id'] existir e não estiver v
     try {
 
         $sql = "SELECT * FROM UTILIZADORES WHERE id= ?";
-        $stmt = $conn->prepare($sql);
+        $stmt = $conn->prepare($sql); // prepara a query para ser executada no bd 
         $stmt->bindParam(1, $id, PDO::PARAM_INT);
-        $stmt->execute();
+        $stmt->execute(); // executa a query $sql
         $user = $stmt->fetch(); // $user = o resultado da query (o utilizador) que foi executada. fetch = pega o resultado da query.
     } catch (PDOException $e) {
 

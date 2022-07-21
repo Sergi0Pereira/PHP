@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['id']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['id']) && $_SERVER["REQUEST_METHOD"] == "POST") { // verifica se existe o id e se o método é POST (se é um formulário) e se o usuário clicou no botão de deletar.
     include "config.php";
 
     try {

@@ -1,7 +1,7 @@
     <?php include "config.php"; // Importar as constantes e a ligaçao criada
-    try { // tentar receber dados da tabela utilizadores
+    try { // tentar receber dados da tabela utilizadores do banco de dados 
         $sql = "SELECT * FROM utilizadores;"; // query a executar
-        $stmt = $conn->query($sql); //esta variavel stmt é como carregar no raio do workbench
+        $stmt = $conn->query($sql); //esta variavel stmt é como carregar no raio do workbench o ficheiro php.ini. O ficheiro php.ini é o ficheiro que contém as configurações do servidor.
         $users = $stmt->fetchAll(); // recebe todos os dados que vem do comando executado
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
