@@ -9,7 +9,7 @@ try {
     $conn = new PDO("mysql:host=" . server. ";dbname=" .dbname, user, pass); // Objecto que define o caminho e identificaçao da base de dados.
 
     // Definir o modo de erro e da exceçao.
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Define o modo de erro. O modo de erro é o que vai ser usado para tratar erros. O modo de erro é um atributo da classe PDO. 
 
     //Comando SQL
 

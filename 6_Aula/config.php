@@ -12,8 +12,12 @@ session_start();
 
 
 
-try {
+try { 
     $conn = new PDO(DSN, DB_USER, DB_PASS, CONFIG_OP); // cria uma conexão com o banco de dados. DSN = Data Source Name. DB_USER = nome do utilizador do banco de dados. DB_PASS = palavra-passe do utilizador do banco de dados. CONFIG_OP = configuração de opções do PDO.
+    echo "Conexão bem sucedida. Xampp ligado.";
 } catch (PDOException $e) {
+    echo"Xampp desligado.\n";
     echo $conn . "<br>" . $e->getMessage(); // imprime a conexão com o banco de dados e a mensagem de erro.
+}finally{
+    $conn = null; // fecha a conexão com o banco de dados.
 }

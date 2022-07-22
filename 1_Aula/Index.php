@@ -39,10 +39,10 @@
         echo "Os valores sao iguais.";
     }
     $texto = "Ola Mundo";
-    echo "tamanho strings: " . strlen($texto) . "<br>" . "<br>";
-    echo "Numero palavras:" . str_word_count($texto) . "<br>";
-    echo "string Invertida " . strrev($texto) . "<br>";
-    echo "string Substituida " . str_replace("Olá", "Adeus", $texto) . "<br>";
+    echo "tamanho strings: " . strlen($texto) . "<br>" . "<br>"; // tamanho da string
+    echo "Numero palavras:" . str_word_count($texto) . "<br>"; // numero de palavras
+    echo "string Invertida " . strrev($texto) . "<br>"; // inverte a string
+    echo "string Substituida " . str_replace("Olá", "Adeus", $texto) . "<br>"; // substitui uma string por outra 
     echo $num1 + $num2 . "<br>";
     $color = "azul";
     switch ($color) {
