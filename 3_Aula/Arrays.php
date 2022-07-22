@@ -54,7 +54,7 @@
     <br>
     <h2>Variaveis Super-Globais</h2>
 
-    <?php
+    
 
     
 
